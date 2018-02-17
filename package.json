@@ -1,0 +1,36 @@
+{
+  "name": "headless-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "encrypt": "node encrypt-credentials.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^4.17.0",
+    "puppeteer": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1",
+    "prompt": "^1.0.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "google"
+    ],
+    "rules": {
+      "no-console": ["error", { "allow": [ "log"] }]
+    },
+    "parserOptions": {
+      "ecmaVersion": 8
+    }
+  }
+}
