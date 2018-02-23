@@ -17,15 +17,16 @@ function decrypt(text) {
   dec += decipher.final('utf8');
   return dec;
 }
-
+/**
+ * [getRemainingMortgage description]
+ * @return {[type]} [description]
+ */
 function getRemainingMortgage() {
-  //https://www.mtgprofessor.com/formulas.htm
-  let L = 415000;
-  let c = 0.04125 / 12;
-  let p = (Date.now() - 1436312510000) / (30 * 24 * 60 * 60 * 1000)
-  let n = 30 * 12;
-  let P = L * (c * Math.pow(1 + c, n)) / (Math.pow(1 + c, n) - 1)
-  // return P
+  // https://www.mtgprofessor.com/formulas.htm
+  let L = 415000; // loan amount
+  let c = 0.04125 / 12; // interest rate
+  let p = (Date.now() - 1436312510000) / (30 * 24 * 60 * 60 * 1000); // change the timestamp to correspond to your start date.
+  let n = 30 * 12; // mortgage term (30 years)
   return Math.round(L * (Math.pow(1 + c, n) - Math.pow(1 + c, p)) / (Math.pow(1 + c, n) - 1));
 }
 
@@ -93,7 +94,7 @@ async function run() {
 
   // save
   console.log('hi');
-  await page.click('#product-view-root > div.productPageContent > div.pageContents > div.settingsPage > div:nth-child(2) > div > section > div > div > div.col-xs-14.col-sm-14.col-md-14.col-lg-14.settingsBodyContainer > div > div > section > ul > div > li:nth-child(2) > div > div > ul > li > form > div.accountDetailsFooter > a',{delay: 10})
+  await page.click('#product-view-root > div.productPageContent > div.pageContents > div.settingsPage > div:nth-child(2) > div > section > div > div > div.col-xs-14.col-sm-14.col-md-14.col-lg-14.settingsBodyContainer > div > div > section > ul > div > li:nth-child(2) > div > div > ul > li > form > div.accountDetailsFooter > a', {delay: 10});
   // browser.close();
 }
 
